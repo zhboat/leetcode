@@ -22,7 +22,9 @@ class Solution:
                 else:
                     result = ""
                     continue
+
         return False if calc_base(n) == False else True
+
 
 ret = Solution().isStrictlyPalindromic(9)
 print(ret)

@@ -21,6 +21,6 @@ class Solution:
         [nums.remove(j) for j in temp_nums if nums.count(j) not in [1, 2]]
 
 
-nums = [1,1,1,2,2,3]
+nums = [1, 1, 1, 2, 2, 3]
 ret = Solution().removeDuplicates(nums)
 print(nums)

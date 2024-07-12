@@ -18,7 +18,7 @@ class Solution:
             nums[:] = a[:]
 
 
-nums = [0,1,2,2,3,0,4,2]
+nums = [0, 1, 2, 2, 3, 0, 4, 2]
 val = 2
 Solution().removeElement(nums, val)
 print(nums)
