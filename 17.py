@@ -4,25 +4,24 @@
 给出数字到字母的映射如下（与电话按键相同）。注意 1 不对应任何字母。
 """
 
-
 from typing import List
-from itertools import combinations
+
 
 class Solution:
     def letterCombinations(self, digits: str) -> List[str]:
         phone_maps = {
-            "2": ['a', 'b', 'c'],
-            "3": ['d', 'e', 'f'],
-            "4": ['g', 'h', 'i'],
-            '5': ['j', 'k', 'l'],
-            '6': ['m', 'n', 'o'],
-            '7': ['p', 'q', 'r', 's'],
-            '8': ['t', 'u', 'v'],
-            '9': ['w', 'x', 'y', 'z']
+            "2": ["a", "b", "c"],
+            "3": ["d", "e", "f"],
+            "4": ["g", "h", "i"],
+            "5": ["j", "k", "l"],
+            "6": ["m", "n", "o"],
+            "7": ["p", "q", "r", "s"],
+            "8": ["t", "u", "v"],
+            "9": ["w", "x", "y", "z"],
         }
 
         def fn():
-            queue = ['']
+            queue = [""]
             for digit in digits:
                 for _ in range(len(queue)):
                     temp = queue.pop(0)
@@ -33,7 +32,6 @@ class Solution:
         return fn() if len(digits) > 0 else []
 
 
-
-digits = '23'
+digits = "23"
 ret = Solution().letterCombinations(digits=digits)
 print(ret)
