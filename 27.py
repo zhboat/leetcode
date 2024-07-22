@@ -13,9 +13,7 @@ from typing import List
 class Solution:
     def removeElement(self, nums: List[int], val: int) -> int:
         a = [i for i in nums if i != val]
-
-        for i in range(len(nums)):
-            nums[:] = a[:]
+        nums[:] = a[:]
 
 
 nums = [0, 1, 2, 2, 3, 0, 4, 2]

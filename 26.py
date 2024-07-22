@@ -12,10 +12,20 @@ from typing import List
 
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
-        temp_nums = nums.copy()
-        [nums.remove(j) for j in temp_nums if nums.count(j) != 1]
+        a = set()
+        count = 0
+        while count < len(nums):
+            if nums[count] in a:
+                nums.pop(count)
+                continue
+            else:
+                a.add(nums[count])
+                count += 1
+            
+        # temp_nums = nums.copy()
+        # [nums.remove(j) for j in temp_nums if nums.count(j) != 1]
 
 
-nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
+nums = [0, 1, 1]
 Solution().removeDuplicates(nums)
 print(nums)
