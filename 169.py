@@ -4,14 +4,15 @@
 你可以假设数组是非空的，并且给定的数组总是存在多数元素。
 """
 
-from collections import Counter
+from collections import defaultdict
 from typing import List
 
 
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
-        counter = Counter(nums)
+        counter = defaultdict(int)
         for i in nums:
+            counter[i] += 1
             if counter[i] > len(nums) // 2:
                 return i
 

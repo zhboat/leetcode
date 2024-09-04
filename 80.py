@@ -13,14 +13,23 @@
 """
 
 from typing import List
+from collections import defaultdict
 
 
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
-        temp_nums = nums.copy()
-        [nums.remove(j) for j in temp_nums if nums.count(j) not in [1, 2]]
+        if len(nums) <= 2:
+            return len(nums)
+
+        left = 2
+
+        for right in range(2, len(nums)):
+            if nums[left - 2] != nums[right]:
+                nums[left] = nums[right]
+                left += 1
+        return left
 
 
-nums = [1, 1, 1, 2, 2, 3]
+nums = [1, 2 ,3]
 ret = Solution().removeDuplicates(nums)
-print(nums)
+print(ret)
